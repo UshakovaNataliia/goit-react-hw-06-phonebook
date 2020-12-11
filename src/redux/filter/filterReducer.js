@@ -1,7 +1,4 @@
 import {FILTER_CONTACT} from './filterActionsTypes';
-//   state = {
-//     filter: '',
-//   };
 
 export const filter = (state = '', {type, payload}) => {
     switch (type) {
@@ -11,10 +8,3 @@ export const filter = (state = '', {type, payload}) => {
             return state;
     }
 };
-
-//   filterInput = filter => {
-//     const { name, value } = filter.currentTarget;
-//     return this.setState({
-//       [name]: value,
-//     });
-//   };

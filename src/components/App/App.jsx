@@ -6,10 +6,8 @@ import { CSSTransition } from 'react-transition-group';
 import styles from './App.module.css';
 import { connect } from 'react-redux';
 import {setContacts} from '../../redux/contactList/contactListActions'
-// import contactsReducer from '../../redux/store';
 
 class App extends Component { 
-
   componentDidMount() {
     const parseContacts = JSON.parse(localStorage.getItem('contacts'));
     if (parseContacts) {

@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import {filterInput} from '../../redux/filter/filterActions';
 import PropTypes from 'prop-types';
 import filterStyles from './Filter.module.css';
-// import { addContactItem } from '../../redux/contactList/contactListActions';
-
 
 const Filter = ({onFilter, filter}) => {
   return (
