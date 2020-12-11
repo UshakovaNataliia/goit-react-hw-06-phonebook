@@ -1,20 +1,6 @@
-import {FILTER_CONTACT} from './filterActionsTypes';
-//   state = {
-//     filter: '',
-//   };
+import { filterInput } from './filterActions';
+import { createReducer } from '@reduxjs/toolkit';
 
-export const filter = (state = '', {type, payload}) => {
-    switch (type) {
-        case FILTER_CONTACT:
-            return payload.filter;
-        default:
-            return state;
-    }
-};
-
-//   filterInput = filter => {
-//     const { name, value } = filter.currentTarget;
-//     return this.setState({
-//       [name]: value,
-//     });
-//   };
+export const filter = createReducer('', {
+    [filterInput]: (_, action) => action.payload, // _ - state не используется
+});

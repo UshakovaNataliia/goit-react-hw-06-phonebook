@@ -32,7 +32,6 @@
 }
 .alert {
   background-color: rgba(248, 37, 9, 0.733);
-  /* width: 500px; */
   text-align: center;
   height: 20px;
   border-radius: 5px;

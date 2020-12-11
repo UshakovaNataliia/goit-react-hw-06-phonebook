@@ -1,15 +1,8 @@
-import {ADD_CONTACT, DELETE_CONTACT, SET_CONTACTS} from './contactListActionsTypes';
+import { addContactItem, deleteContact, setContacts} from './contactListActions';
+import {createReducer} from '@reduxjs/toolkit';
 
-export const contacts = (state = [], {type, payload}) => {
-    switch (type) {
-        case ADD_CONTACT:
-            return [...state, payload.contact];
-        case DELETE_CONTACT:
-            return state.filter(contact => contact.id !== payload.contactId);
-        case SET_CONTACTS:
-            return [...state, ...payload.contacts];
-        default:
-            return state;
-    }
-};
-
+export const contacts = createReducer([], {
+    [addContactItem]: (state, action) => [...state, action.payload.contact],
+    [deleteContact]: (state, action) => state.filter(contact => contact.id !== action.payload),
+    [setContacts]: (state, action) => [...state, ...action.payload],
+});
