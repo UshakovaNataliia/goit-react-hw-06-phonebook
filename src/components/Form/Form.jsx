@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addContactItem } from '../../redux/contactList/contactListActions';
+import { addContactItem } from '../../redux/contactList/contactsOperation';
 import PropTypes from 'prop-types';
 import { CSSTransition } from 'react-transition-group';
 import formStyles from './Form.module.css';
 import alertStyles from './alert.module.css';
 import styles from '../App/App.module.css';
+import {getContacts} from '../../redux/contactList/contactsSelectors';
 
 class Form extends Component { 
   static propTypes = {
@@ -79,7 +80,7 @@ class Form extends Component {
 };
 
 const mapStateToProps = (state) => ({
-  contacts: state.contactsReducer.contacts
+  contacts: getContacts(state)
 });
 
 const mapDispatchToProps = {

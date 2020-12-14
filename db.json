@@ -1,3 +1,22 @@
 {
-  "contacts": []
+  "contacts": [
+    {
+      "name": "rosie simpson",
+      "number": "345678",
+      "alert": false,
+      "id": 4
+    },
+    {
+      "name": "Наталья",
+      "number": "23456",
+      "alert": false,
+      "id": 5
+    },
+    {
+      "name": "fgb",
+      "number": "324567",
+      "alert": false,
+      "id": 6
+    }
+  ]
 }

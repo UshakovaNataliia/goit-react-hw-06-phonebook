@@ -5,20 +5,13 @@ import Filter from '../Filter';
 import { CSSTransition } from 'react-transition-group';
 import styles from './App.module.css';
 import { connect } from 'react-redux';
-import {setContacts} from '../../redux/contactList/contactListActions'
+import { setContacts } from '../../redux/contactList/contactsOperation';
+import {getContacts} from '../../redux/contactList/contactsSelectors';
 
 class App extends Component { 
   componentDidMount() {
-    const parseContacts = JSON.parse(localStorage.getItem('contacts'));
-    if (parseContacts) {
-      this.props.setCont(parseContacts);
-    }
+    this.props.setContacts();
   };
-  componentDidUpdate(prevProps, prevState) {
-    if (prevProps.cont !== this.props.contacts) {
-      localStorage.setItem('contacts', JSON.stringify(this.props.contacts));
-    }
-  }
 
   render() {
      return (
@@ -50,14 +43,12 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    contacts: state.contactsReducer.contacts
+    contacts: getContacts(state)
   }
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setCont: (cont => dispatch(setContacts(cont)))
-  }
+const mapDispatchToProps = {
+    setContacts: setContacts
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
