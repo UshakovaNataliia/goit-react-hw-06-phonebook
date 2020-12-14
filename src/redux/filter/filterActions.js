@@ -1,8 +1,3 @@
-import { FILTER_CONTACT } from './filterActionsTypes';
+import {createAction} from '@reduxjs/toolkit';
 
-export const filterInput = filter => ({
-    type: FILTER_CONTACT,
-    payload: {
-        filter,
-    }
-});
+export const filterInput = createAction('filter/contacts');
