@@ -2,21 +2,27 @@
   "contacts": [
     {
       "name": "rosie simpson",
-      "number": "345678",
+      "number": "45678",
       "alert": false,
-      "id": 4
-    },
-    {
-      "name": "Наталья",
-      "number": "23456",
-      "alert": false,
-      "id": 5
+      "id": 1
     },
     {
       "name": "fgb",
-      "number": "324567",
+      "number": "234567",
       "alert": false,
-      "id": 6
+      "id": 2
+    },
+    {
+      "name": "dfv",
+      "number": "456789",
+      "alert": false,
+      "id": 3
+    },
+    {
+      "name": "fgvf",
+      "number": "456789",
+      "alert": false,
+      "id": 4
     }
   ]
 }

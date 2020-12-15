@@ -6,7 +6,7 @@ import { CSSTransition } from 'react-transition-group';
 import styles from './App.module.css';
 import { connect } from 'react-redux';
 import { setContacts } from '../../redux/contactList/contactsOperation';
-import {getContacts} from '../../redux/contactList/contactsSelectors';
+import {getContacts, getFilter} from '../../redux/contactList/contactsSelectors';
 
 class App extends Component { 
   componentDidMount() {
@@ -28,7 +28,7 @@ class App extends Component {
           <Form/>
           <h2>Contacts</h2>
          <CSSTransition
-          in={this.props.contacts.length > 1}
+          in={this.props.contacts.length > 1 || this.props.filter !== ''}
           timeout={250}
           classNames={styles}
           unmountOnExit
@@ -43,7 +43,8 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    contacts: getContacts(state)
+    contacts: getContacts(state),
+    filter: getFilter(state)
   }
 };
 
